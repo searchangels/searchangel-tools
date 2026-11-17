@@ -1,0 +1,18 @@
+# Case data holds real names of adoptees' DNA matches. Never commit it.
+cases/
+pastes/
+trees/
+*.csv
+*.ged
+adoptee.txt
+clusters.txt
+pages_done.txt
+tree_*.txt
+sample_*.txt
+
+# Access token for the private-repo update check
+update_token.txt
+
+__pycache__/
+*.previous
+*.zip

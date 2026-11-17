@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birth Family Tool: tester instructions</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.55; color: #1c1c1c;
+         background: #fff; max-width: 780px; margin: 0 auto; padding: 24px 16px 60px; }
+  h1 { font-size: 30px; margin-bottom: 4px; }
+  h2 { font-size: 22px; margin-top: 38px; border-bottom: 2px solid #1a7f37; padding-bottom: 4px; }
+  h3 { font-size: 18px; margin-top: 24px; }
+  .lead { color: #444; margin-top: 0; }
+  .box { background: #f3f7f3; border-left: 5px solid #1a7f37; padding: 12px 16px; margin: 16px 0; }
+  .warn { background: #fff6e5; border-left-color: #b36b00; }
+  kbd { background: #eee; border: 1px solid #bbb; border-radius: 4px; padding: 1px 6px; font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid #ccc; padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .grey { background: #555; color: #fff; } .amber { background: #b36b00; color: #fff; }
+  .green { background: #1a7f37; color: #fff; } .red { background: #b3261e; color: #fff; }
+  .pill { padding: 2px 9px; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+  code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; }
+  li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Birth Family Tool</h1>
+<p class="lead">Test version for Search Angels volunteers. Windows only for now.</p>
+
+<p>This tool helps you work an adoptee's AncestryDNA matches the way an experienced searcher would. You collect the matches, it sorts them into the two parents' sides and into family groups, points at the most recent shared ancestors, and then helps you step down one generation at a time toward the birth parents.</p>
+
+<p>It's a first version. Please use it on a case you already know the answer to, so you can tell us where it's right and where it's wrong.</p>
+
+<h2>Why you press the keys yourself</h2>
+
+<div class="box">
+<p><strong>Ancestry doesn't allow bots, AI agents or other automated tools to collect data from its website.</strong> Its terms, updated in May 2026, are clear about that, and Ancestry has shut down tools that did it in the past.</p>
+<p>So this tool never touches Ancestry. You do the browsing. On each page you press <kbd>Ctrl</kbd>+<kbd>A</kbd> (select everything) and then <kbd>Ctrl</kbd>+<kbd>C</kbd> (copy), the same as you might do by hand to save a page. The tool only reads what's on your computer's clipboard and files it for you.</p>
+<p>Everything stays on your computer. Nothing about a case is uploaded or sent anywhere. The only time the tool goes online is to check whether a newer version of itself is available.</p>
+</div>
+
+<h2>What you need</h2>
+<ul>
+  <li>A Windows computer.</li>
+  <li>Access to the adoptee's AncestryDNA matches (see "Getting access" below).</li>
+  <li>About 15 to 20 minutes for a first run.</li>
+</ul>
+
+<h2>Step 1: One-time setup</h2>
+<ol>
+  <li><strong>Install Python.</strong> Open the Microsoft Store, search for <strong>Python</strong>, and install the newest one published by the Python Software Foundation. It's free. You don't need to open it afterward.</li>
+  <li><strong>Unzip this folder</strong> somewhere easy to find, such as your Documents folder. Don't run the files from inside the zip.</li>
+</ol>
+<p>The first time you double-click one of the two launcher files, Windows may ask whether you're sure you want to run it. Choose "More info" and then "Run anyway".</p>
+
+<h2>Getting access to the adoptee's results</h2>
+<p>The adoptee stays the owner of their DNA results and invites you in. Two separate invitations are involved.</p>
+
+<h3>DNA results: ask for the Collaborator role</h3>
+<p>The adoptee goes to Account Settings, then DNA, picks their test, opens "DNA test sharing" and invites you by email.</p>
+<table>
+  <tr><th>Role</th><th>What it allows, according to Ancestry's help pages</th></tr>
+  <tr><td>Viewer</td><td>See the results and matches. No changes.</td></tr>
+  <tr><td><strong>Collaborator</strong></td><td>Everything a viewer can do, plus add notes, group matches and link the test to a tree. <strong>This is the one to ask for.</strong></td></tr>
+  <tr><td>Manager</td><td>Also invite others, download or delete the DNA data, and send messages as the owner. More than a searcher needs.</td></tr>
+</table>
+
+<h3>Family tree: ask for the Editor role</h3>
+<p>If the working tree lives in the adoptee's account, they invite you to it from the tree's settings.</p>
+<table>
+  <tr><th>Role</th><th>What it allows</th></tr>
+  <tr><td>Guest</td><td>View and comment. Can't see living people.</td></tr>
+  <tr><td>Contributor</td><td>Add comments, photos and stories. Can't change the tree or see living people.</td></tr>
+  <tr><td><strong>Editor</strong></td><td>Add, change and remove people, and see living people. <strong>This is the one to ask for.</strong></td></tr>
+</table>
+<p>Ancestry changes these screens from time to time. If what you see doesn't match, tell us what the choices are now.</p>
+
+<h2>Step 2: Capture a case</h2>
+<p>Double-click <strong>1 Capture a case</strong>. Type a short name for the case and press Enter. A small window opens and stays on top of your browser.</p>
+
+<h3>What the window shows</h3>
+<ul>
+  <li><strong>A bold heading</strong> with the step you're on, and plain instructions under it.</li>
+  <li><strong>A big green number</strong> that counts up as the tool takes in what you copied. If it's climbing, it's working.</li>
+  <li><strong>A coloured bar</strong> that tells you what just happened:</li>
+</ul>
+<table>
+  <tr><td><span class="pill grey">WAITING</span></td><td>Ready for you to copy a page.</td></tr>
+  <tr><td><span class="pill amber">PROCESSING</span></td><td>Reading what you copied. Takes a moment.</td></tr>
+  <tr><td><span class="pill green">RECEIVED</span></td><td>Got it. Go on to the next page.</td></tr>
+  <tr><td><span class="pill red">NOT RECOGNISED</span></td><td>That wasn't the page it asked for. Nothing is lost. Read the message, open the right page and copy again.</td></tr>
+</table>
+
+<h3>The three steps it walks you through</h3>
+<ol>
+  <li><strong>Match list.</strong> On Ancestry open DNA, then Matches. Click Filter, then Shared DNA, then Custom centimorgan range. Type 90 in Min, leave Max empty, and apply. Set 50 per page at the bottom. Press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>. Go to the next page and repeat until the window says the list is done.</li>
+  <li><strong>Public trees.</strong> Back on the match list, click Filter, then Trees, then Public linked trees, and apply. The window names one person at a time. Click that name, press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>, then your browser's Back button. You can do them in any order.</li>
+  <li><strong>Shared matches.</strong> Set the Trees filter back to All. For each person the window names, click the name, click the "Shared Matches" tab on their page, then press <kbd>Ctrl</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
+</ol>
+<p>The filters are only on the main match list, not on a person's page. If you don't see Filter, press Back.</p>
+<p>Two buttons help you along: <strong>Skip this person</strong> if you can't open someone, and <strong>Finish this step</strong> when you've done enough. You don't have to do every name. You can close the window at any time and pick the case up later by running the launcher again with the same case name.</p>
+
+<h2>Step 3: Read the report</h2>
+<p>When you close the window, a report opens in Notepad. It's organised as two family trees, one for each parent's side, because that's how the search works.</p>
+<p>For each side it shows:</p>
+<ul>
+  <li><strong>The closest match</strong>, marked "start here", and what that amount of DNA usually means.</li>
+  <li><strong>Family groups</strong> (clusters) of matches who also match each other.</li>
+  <li><strong>Surnames</strong> that turn up in more than one of those matches' trees.</li>
+  <li><strong>People who appear in two or more trees</strong>, most recently born first. The top one is your most recent common ancestor to work from.</li>
+  <li><strong>Which family groups should join by marriage</strong> on the way down to that parent.</li>
+</ul>
+<p>The report ends with an <strong>endogamy check</strong>. If it warns you, the matches are probably more distant than their numbers suggest, and you shouldn't trust the tool's relationship guesses on that case.</p>
+
+<h2>Step 4: Work the case</h2>
+<p>Double-click <strong>2 Work the case</strong>, type the case name, and pick from the menu.</p>
+<table>
+  <tr><th>Choice</th><th>What it does</th></tr>
+  <tr><td>1. Save birth year and place</td><td>Do this first. It lets the tool say which generation someone belongs to and whether they're the right age to be a birth parent.</td></tr>
+  <tr><td>2. Show the report</td><td>Opens the report again, updated.</td></tr>
+  <tr><td>3. Make the starting tree file</td><td>Builds the blank canvas: the adoptee, two unknown parents, and the closest match on each side hung from "Unknown" placeholders. Upload it to Ancestry as a new private tree and link the adoptee's DNA to the adoptee in it.</td></tr>
+  <tr><td>4. Walk down the generations</td><td>You type a shared ancestor couple, then each of their children, who each child married, and the child's birth year. The tool checks whether each spouse's family also shows up in the matches and tells you which child to follow. Repeat until it reaches the birth parents.</td></tr>
+  <tr><td>5. Surname check</td><td>Type a surname and see which matches carry it or have it in their tree, and on which parent's side.</td></tr>
+  <tr><td>6. cM check</td><td>Type a cM amount and a relationship a tree claims, such as 497 and 1C1R. The tool says whether that's believable. Good for catching mistakes in public trees.</td></tr>
+</table>
+<p>Public trees hide living people as "Private", so they usually run out at the grandparents. For the generations after that you'll still need obituaries and records, as you do today. The walk reminds you of that at each step.</p>
+
+<h2>What this version can't do yet</h2>
+<div class="box warn">
+<ul>
+  <li><strong>It's been tried on one real case.</strong> That case came out right on three of four family lines. Expect rough edges on yours.</li>
+  <li><strong>Spelling has to match.</strong> Smith and Smyth count as two different surnames.</li>
+  <li><strong>It only reads the small tree preview</strong> on each match's page, not the full tree.</li>
+  <li><strong>It doesn't know ages</strong> unless you type birth years into the walk.</li>
+  <li><strong>The starting tree file hasn't been uploaded to Ancestry yet by anyone.</strong> If Ancestry rejects it or the Unknown people look wrong, tell us.</li>
+  <li><strong>It can't correct for endogamy.</strong> It only warns.</li>
+  <li><strong>Nothing here is proof.</strong> It narrows where to look. Records confirm.</li>
+</ul>
+</div>
+
+<h2>Privacy</h2>
+<ul>
+  <li>Each case is saved in the <code>cases</code> folder next to these files. It holds real names of the adoptee's matches.</li>
+  <li>Keep that folder on your own computer. Don't email it or put it in a shared drive.</li>
+  <li>When a case is finished, delete its folder.</li>
+  <li>Never type a Social Security number into the tool. It only needs the state.</li>
+</ul>
+
+<h2>What we'd like to hear back</h2>
+<ul>
+  <li>Did the window ever turn red on a page you were sure was right? Which step?</li>
+  <li>Were any instructions unclear, or did Ancestry's screen not match them?</li>
+  <li>Did the report point at the right families for a case you've already solved?</li>
+  <li>Did the walk follow the right child at each generation?</li>
+  <li>What did you have to do by hand that you wish it did for you?</li>
+</ul>
+<p>Send suggestions and bug reports to <a href="mailto:support@searchangels.org?subject=Birth%20Family%20Tool">support@searchangels.org</a> with "Birth Family Tool" in the subject line. Say which step you were on and what the window said.</p>
+<p>If something goes wrong, the <code>pastes</code> folder inside the case holds a copy of every page you copied. That's what we need to fix it, but it contains real names, so check with the case owner before sharing it.</p>
+
+<h2>Updates</h2>
+<p>Each time you start the tool it checks for a newer version. If there is one, it asks before changing anything. Press Enter to update, then close the window and start the tool again. Your cases aren't touched by an update, and the version you had is kept next to the new one as <code>birthfamily.py.previous</code>.</p>
+<p>If the tool can't reach the update site, it says nothing and carries on with the version you have.</p>
+
+<h2>Planned for later</h2>
+<ul>
+  <li>Reading match lists from GEDmatch, FamilyTreeDNA and other companies.</li>
+  <li>Reading the Search Angels client form so the adoptee's known facts load automatically.</li>
+  <li>Treating similar spellings of a surname as the same family.</li>
+</ul>
+
+</body>
+</html>
