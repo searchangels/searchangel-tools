@@ -16,3 +16,13 @@ update_token.txt
 __pycache__/
 *.previous
 *.zip
+
+# Where the large record files live on this computer
+records_path.txt
+records/
+
+# Build outputs
+dist/
+build/
+version_info.txt
+app_error.txt

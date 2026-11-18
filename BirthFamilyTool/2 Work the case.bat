@@ -1,5 +1,5 @@
 @echo off
-title Birth Family Tool - work a case
+title Birth Family Tool
 cd /d "%~dp0"
 set PYTHONIOENCODING=utf-8
 python -c "import tkinter" 2>nul

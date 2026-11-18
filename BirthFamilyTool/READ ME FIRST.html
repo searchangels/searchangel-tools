@@ -95,11 +95,12 @@
 
 <h3>The three steps it walks you through</h3>
 <ol>
-  <li><strong>Match list.</strong> On Ancestry open DNA, then Matches. Click Filter, then Shared DNA, then Custom centimorgan range. Type 90 in Min, leave Max empty, and apply. Set 50 per page at the bottom. Press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>. Go to the next page and repeat until the window says the list is done.</li>
-  <li><strong>Public trees.</strong> Back on the match list, click Filter, then Trees, then Public linked trees, and apply. The window names one person at a time. Click that name, press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>, then your browser's Back button. You can do them in any order.</li>
+  <li><strong>Match list.</strong> On Ancestry open DNA, then Matches. Click Filter, then Shared DNA, then Custom centimorgan range. Type 90 in Min and, in Max, the highest number Ancestry accepts (try 3490), then apply. Set 50 per page at the bottom. Press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>. Go to the next page and repeat until the window says the list is done.</li>
+  <li><strong>Public trees.</strong> Back on the match list, click Filter, then Trees, then Public linked trees, and apply. This filter only makes the names easier to find; nothing is thrown away. The window names one person at a time. Click that name, press <kbd>Ctrl</kbd>+<kbd>A</kbd>, then <kbd>Ctrl</kbd>+<kbd>C</kbd>, then your browser's Back button. You can do them in any order.</li>
   <li><strong>Shared matches.</strong> Set the Trees filter back to All. For each person the window names, click the name, click the "Shared Matches" tab on their page, then press <kbd>Ctrl</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
 </ol>
-<p>The filters are only on the main match list, not on a person's page. If you don't see Filter, press Back.</p>
+<p>The Filter button is on the match list (the page with everyone on it). If you've clicked into one person and don't see Filter, press Back.</p>
+<p>If the bar turns red on a page you're sure is right, the tool saves a file called <code>layout_report.txt</code> in the case folder. It's a copy of the page's layout with every name blanked out. Please email that one file to support@searchangels.org. It shows us what Ancestry changed without sharing anyone's name.</p>
 <p>Two buttons help you along: <strong>Skip this person</strong> if you can't open someone, and <strong>Finish this step</strong> when you've done enough. You don't have to do every name. You can close the window at any time and pick the case up later by running the launcher again with the same case name.</p>
 
 <h2>Step 3: Read the report</h2>
@@ -120,7 +121,7 @@
   <tr><th>Choice</th><th>What it does</th></tr>
   <tr><td>1. Save birth year and place</td><td>Do this first. It lets the tool say which generation someone belongs to and whether they're the right age to be a birth parent.</td></tr>
   <tr><td>2. Show the report</td><td>Opens the report again, updated.</td></tr>
-  <tr><td>3. Make the starting tree file</td><td>Builds the blank canvas: the adoptee, two unknown parents, and the closest match on each side hung from "Unknown" placeholders. Upload it to Ancestry as a new private tree and link the adoptee's DNA to the adoptee in it.</td></tr>
+  <tr><td>3. Build the tree</td><td><strong>Leave the black window open while you work on the tree</strong>; it is what saves your changes and answers the page's lookups. The tree always shows the adoptee under two parents, with each parent's line above them. Click any person to move the view to them, and click the highlighted person to change them. Under each family the page lists which of the adoptee's DNA matches carry that surname, including a spouse's family and a mother's maiden name, so you can see which branch to follow. If the record files are installed, "Look up in the record files" lists the person's parents, brothers and sisters, children and marriages from public records, each with an Add button. The File, Add, How to and About menus are at the top. In detail, it opens a page in your browser that draws the tree so far: the adoptee, two parents with no gender set, the closest match on each side hung from "Unknown" placeholders, and everyone you've typed into the walk. If the walk reached the birth parents, the adoptee hangs under them. Click any person to rename them, add dates, add parents, a spouse or a child, join two entries that are the same person, or remove them. <strong>Download GEDCOM file</strong> saves the tree as you've edited it. Upload that file to Ancestry as a new private tree and link the adoptee's DNA to the adoptee in it. Come back to this choice after each walk and type <code>new</code> to rebuild the page with the latest findings. Rebuilding starts fresh, so download your GEDCOM first if you've made edits you want to keep.</td></tr>
   <tr><td>4. Walk down the generations</td><td>You type a shared ancestor couple, then each of their children, who each child married, and the child's birth year. The tool checks whether each spouse's family also shows up in the matches and tells you which child to follow. Repeat until it reaches the birth parents.</td></tr>
   <tr><td>5. Surname check</td><td>Type a surname and see which matches carry it or have it in their tree, and on which parent's side.</td></tr>
   <tr><td>6. cM check</td><td>Type a cM amount and a relationship a tree claims, such as 497 and 1C1R. The tool says whether that's believable. Good for catching mistakes in public trees.</td></tr>
@@ -132,9 +133,15 @@
 <ul>
   <li><strong>It's been tried on one real case.</strong> That case came out right on three of four family lines. Expect rough edges on yours.</li>
   <li><strong>Spelling has to match.</strong> Smith and Smyth count as two different surnames.</li>
-  <li><strong>It only reads the small tree preview</strong> on each match's page, not the full tree.</li>
+  <li><strong>It only reads the small tree preview</strong> on each match's page, not the full tree. That means public linked trees only; unlinked trees aren't read yet.</li>
+  <li><strong>It trusts what the trees say.</strong> Public trees are often wrong. Treat every name in the report as a lead to check.</li>
+  <li><strong>Ancestry changes its pages often.</strong> When it does, a step may stop recognising a page until we update the tool.</li>
   <li><strong>It doesn't know ages</strong> unless you type birth years into the walk.</li>
-  <li><strong>The starting tree file hasn't been uploaded to Ancestry yet by anyone.</strong> If Ancestry rejects it or the Unknown people look wrong, tell us.</li>
+  <li><strong>The GEDCOM file hasn't been uploaded to Ancestry yet by anyone.</strong> If Ancestry rejects it or the Unknown people look wrong, tell us.</li>
+  <li><strong>The tree is the tool's working guess.</strong> It draws what the matches and your walk suggest. It isn't evidence, and the closest match on each side is placed by Ancestry's relationship label, which can be off by a generation.</li>
+  <li><strong>Tree changes are saved in the case folder</strong> while the tool's window is open. If you close that window first, export the GEDCOM before closing the page.</li>
+  <li><strong>The record files are separate and large</strong> (about 28 GB). Without them the tree still works; the record lookup comes back empty.</li>
+  <li><strong>A matching name in a record is not proof.</strong> Common names return other people's families too. Check dates and places before adding.</li>
   <li><strong>It can't correct for endogamy.</strong> It only warns.</li>
   <li><strong>Nothing here is proof.</strong> It narrows where to look. Records confirm.</li>
 </ul>

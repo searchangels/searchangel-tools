@@ -1,0 +1,22 @@
+Birth Family Tool, from Search Angels
+
+What this installs
+  - The Birth Family Tool program. Everything it needs is included,
+    so there is nothing else to download or install.
+  - An entry in "Add or remove programs", a Start menu entry and,
+    if you want one, a desktop icon.
+
+What it does not install
+  - The optional public record files (about 28 GB). The tool works
+    without them; they can be added later.
+
+Space needed
+  - About 60 MB for the program. The next screens show the exact
+    figure for your computer.
+  - Each case you work adds a few megabytes.
+
+Your cases
+  - Cases and trees are kept on this computer, separate from the
+    program. Installing an update, or installing again to repair,
+    does not change them.
+  - If you uninstall, you are asked whether to delete them too.
